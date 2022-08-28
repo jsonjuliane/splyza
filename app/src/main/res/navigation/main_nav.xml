@@ -21,5 +21,17 @@
         <action
             android:id="@+id/gotoHome"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/gotoQR"
+            app:destination="@id/QRFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/QRFragment"
+        android:name="com.juliane.splyza.view.qr.QRFragment"
+        android:label="fragment_q_r"
+        tools:layout="@layout/fragment_q_r" >
+        <action
+            android:id="@+id/gotoInvite"
+            app:destination="@id/inviteFragment" />
     </fragment>
 </navigation>

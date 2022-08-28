@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/tv_current_members"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Current Members"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/label_current_members"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,11 +33,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="6dp"
-        android:text="Limit"
+        android:text="@string/label_limit"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@id/tv_members_limit_val"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/tv_current_members" />
 
 
     <TextView
@@ -45,7 +47,7 @@
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@id/tv_members_limit"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/s_invite_permissions"
         app:layout_constraintTop_toTopOf="@id/tv_members_limit" />
 
     <TextView
@@ -53,10 +55,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
-        android:text="Current Supporters"
+        android:text="@string/label_current_supporters"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_current_members"
         app:layout_constraintTop_toBottomOf="@id/tv_current_members" />
 
     <TextView
@@ -75,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="6dp"
-        android:text="Limit"
+        android:text="@string/label_limit"
         android:textColor="@color/black"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@id/tv_supporters_limit_val"
@@ -89,18 +91,110 @@
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@id/tv_supporters_limit"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/s_invite_permissions"
         app:layout_constraintTop_toTopOf="@id/tv_supporters_limit" />
 
     <TextView
+        android:id="@+id/tv_invite_permissions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
-        android:text="Invite Permissions"
+        android:text="@string/label_invite_permissions"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_current_members"
         app:layout_constraintTop_toBottomOf="@id/tv_current_supporters" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_supporters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_current_supporters, tv_current_supporters_val,
+         tv_supporters_limit, tv_supporters_limit_val" />
+
+    <Spinner
+        android:id="@+id/s_invite_permissions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_invite_permissions" />
+
+    <TextView
+        android:id="@+id/tv_invite_url_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="@string/label_invite_url_guide"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/s_invite_permissions"
+        app:layout_constraintStart_toStartOf="@id/s_invite_permissions"
+        app:layout_constraintTop_toBottomOf="@id/s_invite_permissions" />
+
+    <TextView
+        android:id="@+id/tv_what_are_permissions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:gravity="center"
+        android:text="@string/label_what_are_permissions"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/tv_invite_url_desc"
+        app:layout_constraintStart_toStartOf="@id/tv_invite_url_desc"
+        app:layout_constraintTop_toBottomOf="@id/tv_invite_url_desc" />
+
+    <Button
+        android:id="@+id/b_share_qr"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/label_share_qr_code"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/tv_what_are_permissions"
+        app:layout_constraintStart_toStartOf="@id/tv_what_are_permissions"
+        app:layout_constraintTop_toBottomOf="@id/tv_what_are_permissions" />
+
+    <Button
+        android:id="@+id/b_copy_link"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="6dp"
+        android:backgroundTint="@color/black"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/label_copy_link"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/b_share_qr"
+        app:layout_constraintStart_toStartOf="@id/b_share_qr"
+        app:layout_constraintTop_toBottomOf="@id/b_share_qr" />
+
+
+    <FrameLayout
+        android:id="@+id/fl_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:elevation="2dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

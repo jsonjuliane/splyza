@@ -1,5 +1,39 @@
 <resources>
     <string name="app_name">Splyza</string>
+    <string-array name="invite_permissions">
+        <item>Coach</item>
+        <item>Player Coach</item>
+        <item>Player</item>
+        <item>Supporter</item>
+    </string-array>
+
+    <string-array name="invite_permissions_no_sup">
+        <item>Coach</item>
+        <item>Player Coach</item>
+        <item>Player</item>
+    </string-array>
+
+    <string-array name="role_choice">
+        <item>manager</item>
+        <item>editor</item>
+        <item>member</item>
+        <item>readonly</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_invite_now">Invite Now</string>
+    <string name="label_qr_link">qrlink</string>
+    <string name="label_my_qr_code">My QR Code</string>
+    <string name="label_invite_disabled">Invite Permissions (Disabled)</string>
+    <string name="label_grow_your_team">Grow your Team</string>
+    <string name="label_invite_more">Invite more people to your team.\nGrow your family!</string>
+    <string name="label_current_members">Current Members</string>
+    <string name="label_limit">Limit</string>
+    <string name="label_current_supporters">Current Supporters</string>
+    <string name="label_invite_permissions">Invite Permissions</string>
+    <string name="label_invite_url_guide">Invite URLs are valid for 7 days. Permissions can be\nchanged from the member management view.</string>
+    <string name="label_what_are_permissions">What are Permissions?</string>
+    <string name="label_share_qr_code">Share QR Code</string>
+    <string name="label_copy_link">Copy Link</string>
+
 </resources>

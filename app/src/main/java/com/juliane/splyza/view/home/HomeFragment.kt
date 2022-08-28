@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
                 (activity as HomeActivity).supportActionBar?.apply {
                     customView.apply {
                         findViewById<TextView>(R.id.tv_menu_back).visibility = View.VISIBLE
-                        findViewById<TextView>(R.id.tv_menu_title).text = "Invite Now"
+                        findViewById<TextView>(R.id.tv_menu_title).text = getString(R.string.label_invite_now)
                     }
                 }
             }

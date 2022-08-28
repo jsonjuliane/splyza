@@ -45,6 +45,9 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation('com.adevinta.android:barista:4.2.0') {
+        exclude group: 'org.jetbrains.kotlin' // Only if you already use Kotlin in your project
+    }
 
     //Constraint Layout
     implementation "androidx.constraintlayout:constraintlayout:$cl"
@@ -72,11 +75,15 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation"
 
+    //QRCodeGenerator
+    implementation "com.google.zxing:core:$qrcode"
+
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitModule.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitModule.converter"
     implementation "com.squareup.okhttp3:logging-interceptor:$retrofitModule.okhttpInterceptor"
 
+    //RetroMock
     implementation "co.infinum:retromock:$retroMock"
 
 }
